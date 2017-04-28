@@ -21,9 +21,9 @@ import com.assl.samples.server.requests.exceptions.ResponseException;
 
 public class TestHttpRequests {
 
-  private String GETUrl = "http://requestb.in/1mjb6oa1";
+  private String GETUrl = "YOUR_(GET)_API_URL_GOES_HERE";
 
-  private String POSTUrl = "http://requestb.in/1mjb6oa1";
+  private String POSTUrl = "YOUR_(POST)_API_URL_GOES_HERE";
 
   @Test
   public void testGETRequests() {
