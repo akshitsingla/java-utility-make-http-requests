@@ -23,7 +23,7 @@ import com.assl.samples.server.requests.exceptions.SSLCertificatesKeException;
 
 public class TestHttpRequests {
 
-  private String GETUrl = "https://api.pipedrive.com/v1/organizations?api_token=c9add03d04c50305c41fbb6001d0d6b61cb172e1";
+  private String GETUrl = "xxx";
 
   private String POSTUrl = "xxx";
 
