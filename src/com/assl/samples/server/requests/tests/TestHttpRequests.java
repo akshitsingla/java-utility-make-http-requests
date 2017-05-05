@@ -39,8 +39,8 @@ public class TestHttpRequests {
     System.out.println(response1);
 
     // GET REQUEST 2 - Contains Payload => Automatically converts into POST
-    // String response2 = makeRequest(webApiInvokerGET, null, PayloadType.XML, "<hello>World!</hello>");
-    // System.out.println(response2);
+    String response2 = makeRequest(webApiInvokerGET, null, PayloadType.XML, "<hello>World!</hello>");
+    System.out.println(response2);
 
     Assert.assertTrue(true);
   }
@@ -74,7 +74,7 @@ public class TestHttpRequests {
         webApiInvokerPOST,
         null,
         PayloadType.JSON,
-        "{\"8d240d99fbfa8b32c7908520527769291efd3672\":\"Description about the startup will be depicted here\",\"78e3f9e5a49390dce4bc4a0c7bd5c61d59782f7a\":\"Startup\",\"67ed61547954ca338afaa172565875dd4abbd270\":\"2014\",\"name\":\"Sample Submission\",\"address_country\":\"Thailand\",\"f0faab900bc0b40b067d05d7b2a3a669b84b023c\":\"www.next.amadeus.com\"}");
+        "[{color:'red',value:'#f00'},{color:'green',value:'#0f0'},{color:'blue',value:'#00f'},{color:'cyan',value:'#0ff'},{color:'magenta',value:'#f0f'},{color:'yellow',value:'#ff0'},{color:'black',value:'#000'},{color:'red',value:'#f00'},{color:'green',value:'#0f0'},{color:'blue',value:'#00f'},{color:'cyan',value:'#0ff'},{color:'magenta',value:'#f0f'},{color:'yellow',value:'#ff0'},{color:'black',value:'#000'},{color:'red',value:'#f00'},{color:'green',value:'#0f0'},{color:'blue',value:'#00f'},{color:'cyan',value:'#0ff'},{color:'magenta',value:'#f0f'},{color:'yellow',value:'#ff0'},{color:'black',value:'#000'},{color:'red',value:'#f00'},{color:'green',value:'#0f0'},{color:'blue',value:'#00f'},{color:'cyan',value:'#0ff'},{color:'magenta',value:'#f0f'},{color:'yellow',value:'#ff0'},{color:'black',value:'#000'},{color:'red',value:'#f00'},{color:'green',value:'#0f0'},{color:'blue',value:'#00f'},{color:'cyan',value:'#0ff'},{color:'magenta',value:'#f0f'},{color:'yellow',value:'#ff0'},{color:'black',value:'#000'}]");
     System.out.println(response5);
 
     Assert.assertTrue(true);
@@ -146,10 +146,12 @@ public class TestHttpRequests {
     catch (InvalidTLSVersionException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
+      Assert.fail();
     }
     catch (SSLCertificatesKeException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
+      Assert.fail();
     }
     return response;
   }
