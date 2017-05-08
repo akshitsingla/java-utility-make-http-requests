@@ -182,14 +182,12 @@ public class WebApiInvoker {
     catch (IOException e) {
       throw new InvalidResponseCodeException(e);
     }
-    switch (responseCode) {
-    case 200: {
+    if (responseCode >= 200 && responseCode < 300) {
       return extractResponse();
     }
-    default: {
+    else {
       extractError(responseCode); // always throws an error
       return null;
-    }
     }
   }
 
