@@ -118,7 +118,7 @@ public class WebApiInvoker {
     try {
 
       // SSLContext for the new TrustManager
-      SSLContext sc = SSLContext.getInstance("TLSv1.1");
+      SSLContext sc = SSLContext.getInstance("TLSv1.2");
       sc.init(null, trustAllCerts, new java.security.SecureRandom());
 
       // Setting the new SSLContext with current connection
@@ -162,7 +162,7 @@ public class WebApiInvoker {
     if (payloadType != null) {
       try {
         connection.setRequestProperty("Content-Type", payloadType.getContentTypeHeaderValue());
-
+        
         DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
         wr.writeBytes(payload);
         wr.close();
